@@ -1,0 +1,33 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="using:MyApp.Controls"
+    x:Class="MyApp.MainPage"
+    mc:Ignorable="d" Width="Auto" Height="Auto" Margin="0,0,20,0" d:DesignWidth="894.5" d:DesignHeight="570" Loading="Page_Loading">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ButtonBackgroundThemeBrush}">
+        <!-- Two column grid for MyApp.MainPage layout-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <!-- MyAppVerticalCommandToolbar LeftButtonStackPanel-->
+            <ColumnDefinition Width="4*"/>
+            <!-- MyAppPropertyColumn -->
+        </Grid.ColumnDefinitions>
+        <!-- LeftButtonStackPanel in left Grid.Column="0" is for nav and command buttons-->
+        <StackPanel x:Name="LeftButtonStackPanel" Style="{StaticResource MyAppVerticalCommandBarStyle}" >
+            <AppBarButton x:Name="RefreshAppBarButton" Icon="Refresh" Label="" Style="{StaticResource MyAppBarButtonStyle}"/>
+        </StackPanel>
+        <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
+        <StackPanel Grid.Column="1">
+            <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelUserInfo}" FieldValue="{x:Bind MyMainPageViewModel.UserInfo, Mode=OneWay}" />
+            <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelCurrentTimeZone}" FieldValue="{x:Bind MyMainPageViewModel.TZDisplayName}" />
+            <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelProfileName}" FieldValue="{x:Bind MyMainPageViewModel.ProfileName}" />
+            <Controls:MyAppDataList ListLabel="{x:Bind MyMainPageViewModel.LabelHostNames}" ListSource="{x:Bind MyMainPageViewModel.HostNames}" />
+            <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelDeviceFamily}" FieldValue="{x:Bind MyMainPageViewModel.DeviceFamily}" />
+            <Controls:MyAppDataField Grid.Row="6" FieldLabel="{x:Bind MyMainPageViewModel.LabelOSVersion}" FieldValue="{x:Bind MyMainPageViewModel.OSVerion}"/>
+        </StackPanel>
+    </Grid>
+</Page>
