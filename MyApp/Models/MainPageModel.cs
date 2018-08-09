@@ -8,13 +8,10 @@ namespace MyApp.Models
 {
     public class MainPageModel
     {
-        private IReadOnlyList<Windows.Networking.HostName> _ListHostName;
-//        private ConnectionProfile _connectionProfile;
         private ObservableCollection<string> _CollectionHostNameString;
 
         public string UserInfo { get; set; }
         public ObservableCollection<string> HostNames { get => _CollectionHostNameString; }
-        //        public string ProfileName => (_connectionProfile == null) ? "not connected" : _connectionProfile.ProfileName;
         public string ProfileName => NetworkInformation.GetInternetConnectionProfile()?.ProfileName;
         public string TZDisplayName => TimeZoneInfo.Local.DisplayName;
         public string OSVersion { get; set; }
@@ -25,8 +22,6 @@ namespace MyApp.Models
             _CollectionHostNameString = new ObservableCollection<string>();
             IReadOnlyList<Windows.Networking.HostName> listHostName = NetworkInformation.GetHostNames();     // Capture all current HostNames for my machine
             foreach (HostName hn in listHostName) { _CollectionHostNameString.Add(hn.CanonicalName); }
-
-            // _connectionProfile = NetworkInformation.GetInternetConnectionProfile();    // Retrieve the ConnectionProfile.
 
             Windows.System.Profile.AnalyticsVersionInfo versioninfo = Windows.System.Profile.AnalyticsInfo.VersionInfo;
             string deviceFamilyVersion = versioninfo.DeviceFamilyVersion;

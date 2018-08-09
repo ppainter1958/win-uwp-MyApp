@@ -17,7 +17,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>FunTools_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>MyApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>945563ACE3A1BD0C8362A6C6A4B7C3079DEBBB39</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -106,8 +107,12 @@
     <Compile Include="Controls\MyAppDataField.xaml.cs">
       <DependentUpon>MyAppDataField.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\HPInfoPageViewModel.cs" />
     <Compile Include="ViewModels\NotificationBase.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="Views\HPInfoPage.xaml.cs">
+      <DependentUpon>HPInfoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -146,10 +151,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\HPInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Hp.Bridge.Client.SDKs.UserInfo">
+      <Version>0.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="HP.Bridge.Logging">
+      <Version>0.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="HP.Bridge.RpcClient">
+      <Version>0.6.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

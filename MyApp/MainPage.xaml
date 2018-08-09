@@ -19,6 +19,7 @@
         <!-- LeftButtonStackPanel in left Grid.Column="0" is for nav and command buttons-->
         <StackPanel x:Name="LeftButtonStackPanel" Style="{StaticResource MyAppVerticalCommandBarStyle}" >
             <AppBarButton x:Name="RefreshAppBarButton" Icon="Refresh" Label="" Style="{StaticResource MyAppBarButtonStyle}"/>
+            <AppBarButton x:Name="HPInfoAppBarButton" Icon="Next" Label="HP Info" Style="{StaticResource MyAppBarButtonStyle}" Click="HPInfoAppBarButton_Click"/>
         </StackPanel>
         <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
         <StackPanel Grid.Column="1">

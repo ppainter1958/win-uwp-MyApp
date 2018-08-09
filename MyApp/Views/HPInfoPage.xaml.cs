@@ -13,36 +13,33 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MyApp.ViewModels;
-using MyApp.Views;
 
-namespace MyApp
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace MyApp.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class HPInfoPage : Page
     {
-        public MainPageViewModel MyMainPageViewModel { get; set; }
-        public MainPage()
+        public HPInfoPageViewModel MyHPInfoPageViewModel { get; set; }
+
+        public HPInfoPage()
         {
             this.InitializeComponent();
-            MyMainPageViewModel = new MainPageViewModel();
-        }
-
-        private void ListViewHostNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            MyHPInfoPageViewModel = new HPInfoPageViewModel();
         }
 
         private async void Page_Loading(FrameworkElement sender, object args)
         {
-            string userInfo = await MyMainPageViewModel.GetUserInfoAsync();
-            MyMainPageViewModel.UserInfo = userInfo;
+            string fullName = MyHPInfoPageViewModel.GetFullName();
+            MyHPInfoPageViewModel.FullName = fullName;
         }
 
-        private void HPInfoAppBarButton_Click(object sender, RoutedEventArgs e)
+        private void HomeAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(HPInfoPage));
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }
