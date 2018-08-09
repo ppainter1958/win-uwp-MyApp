@@ -22,6 +22,7 @@
         </StackPanel>
         <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
         <StackPanel Grid.Column="1">
+            <Rectangle Style="{StaticResource MyAppDataFieldSeparatorStyle}"/> <!-- Separator line-->
             <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelUserInfo}" FieldValue="{x:Bind MyMainPageViewModel.UserInfo, Mode=OneWay}" />
             <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelCurrentTimeZone}" FieldValue="{x:Bind MyMainPageViewModel.TZDisplayName}" />
             <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelProfileName}" FieldValue="{x:Bind MyMainPageViewModel.ProfileName}" />

@@ -11,17 +11,19 @@
 
     <StackPanel Height="Auto">
         <TextBlock x:Name="txtBlock_ListLabel" Style="{StaticResource MyAppFieldLabelTextBlockStyle}" Text="{Binding ListLabel, ElementName=userControlDataList}" />
-        <ListView x:Name="listView_ListSource" ItemsSource="{Binding ListSource, ElementName=userControlDataList}" >
+        <ListView x:Name="listView_ListSource" ItemsSource="{Binding ListSource, ElementName=userControlDataList}" Padding="0,0,0,10">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="MinHeight" Value="0"/>
                     <Setter Property="Height" Value="Auto"/>
                     <Setter Property="Width" Value="Auto"/>
                     <Setter Property="Margin" Value="0,0,0,0"/>
-                    <Setter Property="Padding" Value="0,0,0,0"/>
+                    <Setter Property="Padding" Value="10,0,10,0"/>
                 </Style>
             </ListView.ItemContainerStyle>
             <TextBlock Style="{StaticResource MyAppFieldValueTextBlockStyle}"/>
         </ListView>
+        <Rectangle Style="{StaticResource MyAppDataFieldSeparatorStyle}"/>
+        <!-- Separator line at bottom of the DataField-->
     </StackPanel>
 </UserControl>

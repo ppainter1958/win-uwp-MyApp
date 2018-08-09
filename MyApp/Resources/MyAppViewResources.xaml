@@ -34,11 +34,22 @@
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     <Style x:Key="MyAppFieldLabelTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlockStyle}">
+        <Setter Property="Foreground" Value="Maroon" />
+        <Setter Property="Opacity" Value="0.5" />
         <Setter Property="FontWeight" Value="SemiBold"/>
     </Style>
     <Style x:Key="MyAppFieldValueTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}" >
         <Setter Property="Margin" Value="0,4,0,0" />
         <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+    
+    <Style x:Key="MyAppDataFieldSeparatorStyle" TargetType="Rectangle">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Fill" Value="Maroon" />
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Margin" Value="0,2,0,2" />
     </Style>
 
 </ResourceDictionary>
