@@ -8,24 +8,31 @@ using Windows.Foundation.Collections;
 using System.Threading.Tasks;
 using Hp.Bridge.Client.SDKs.UserInfoSDK;
 using Hp.Bridge.Client.Exceptions;
+using MyApp.Models;
 
 namespace MyApp.ViewModels
 {
-    public class HPInfoPageViewModel
+    public class HPInfoPageViewModel : NotificationBase<HPInfoPageModel>
     {
         public string LabelFullName = "Full Name:";
-        public string FullName { get; set; }
+        public string FullName
+        {
+            get { return This.FullName; }
+            set { SetProperty(This.FullName, value, () => This.FullName = value); }
+        }
+
+        private HPInfoPageModel HPInfoPageModel { get; set; }
 
         public HPInfoPageViewModel()
         {
-            FullName = "Not Available";
+            HPInfoPageModel = new HPInfoPageModel();
         }
-        public string GetFullName()
+        public async Task<string> GetFullName()
         {
             try
             {
-                Task<string> task = UserInfoHelper.GetFullNameAsync();
-                FullName = task.Result;
+                string fullName = await UserInfoHelper.GetFullNameAsync();
+                FullName = fullName;
             } 
             catch (Hp.Bridge.Client.Exceptions.HsaClientException e)
             {

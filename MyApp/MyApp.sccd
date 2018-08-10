@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CustomCapabilityDescriptor xmlns="http://schemas.microsoft.com/appx/2016/sccd" xmlns:s="http://schemas.microsoft.com/appx/2016/sccd">
+  <CustomCapabilities>
+    <CustomCapability Name="HPInc.hpSysInfoCap_v10z8vjag6ke6"></CustomCapability>
+  </CustomCapabilities>
+  <AuthorizedEntities>
+    <AuthorizedEntity AppPackageFamilyName="ce72f021-34d8-4c0f-b1b3-f6caea946556_cybah06w5exe4" CertificateSignatureHash="2bea8bea1aa7232aa7361062ae8259b634131804f09bae6b3e8d3f4ddf58e4bf"></AuthorizedEntity>
+  </AuthorizedEntities>
+  <Catalog>ffff</Catalog>
+</CustomCapabilityDescriptor>

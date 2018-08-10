@@ -33,7 +33,7 @@ namespace MyApp.Views
 
         private async void Page_Loading(FrameworkElement sender, object args)
         {
-            string fullName = MyHPInfoPageViewModel.GetFullName();
+            string fullName = await MyHPInfoPageViewModel.GetFullName();
             MyHPInfoPageViewModel.FullName = fullName;
         }
 
