@@ -5,7 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:Controls="using:MyApp.Controls"
     x:Class="MyApp.Views.HPInfoPage"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loading="Page_Loading">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="640.0"  d:DesignHeight="570" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loading="Page_Loading">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ButtonBackgroundThemeBrush}">
         <!-- Two column grid for MyApp.MainPage layout-->
@@ -21,6 +23,7 @@
         </StackPanel>
         <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
         <StackPanel Grid.Column="1">
+            <TextBlock Text="HP System Information" Style="{StaticResource MyAppTitleTextBlockStyle}" />
             <Rectangle Style="{StaticResource MyAppDataFieldSeparatorStyle}"/> <!-- Separator line-->
             <Controls:MyAppDataField FieldLabel="{x:Bind MyHPInfoPageViewModel.LabelFullName}" FieldValue="{x:Bind MyHPInfoPageViewModel.FullName, Mode=OneWay}" />
         </StackPanel>

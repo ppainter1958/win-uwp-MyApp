@@ -12,7 +12,7 @@
         <Setter Property="Height" Value="{StaticResource MyAppCommandButtonSize}" />
     </Style>
     <LinearGradientBrush x:Key="MyAppVerticalCommandBarBackgroundBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="Black" Offset="1"/>
+        <GradientStop Color="Maroon" Offset="1"/>
         <GradientStop Color="#FFCCCCCC" Offset="0.614"/>
     </LinearGradientBrush>
     <Style x:Key="MyAppVerticalCommandBarStyle" TargetType="StackPanel" >
@@ -50,6 +50,13 @@
         <Setter Property="Fill" Value="Maroon" />
         <Setter Property="Opacity" Value="0.5" />
         <Setter Property="Margin" Value="0,2,0,2" />
+    </Style>
+    <Style x:Key="MyAppTitleTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleTextBlockStyle}">
+        <Setter Property="Padding" Value="0,0,0,10" />
+        <Setter Property="VerticalAlignment" Value ="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="Maroon" />
+        <Setter Property="Opacity" Value="0.5" />
     </Style>
 
 </ResourceDictionary>

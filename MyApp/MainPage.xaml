@@ -5,7 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Controls="using:MyApp.Controls"
     x:Class="MyApp.MainPage"
-    mc:Ignorable="d" Width="Auto" Height="Auto" Margin="0,0,20,0" d:DesignWidth="894.5" d:DesignHeight="570" Loading="Page_Loading">
+    mc:Ignorable="d" Width="Auto" Height="Auto" Margin="0,0,20,0" d:DesignWidth="640.63" d:DesignHeight="570" Loading="Page_Loading">
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ButtonBackgroundThemeBrush}">
@@ -23,6 +23,7 @@
         </StackPanel>
         <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
         <StackPanel Grid.Column="1">
+            <TextBlock Text="General Information" Style="{StaticResource MyAppTitleTextBlockStyle}" />
             <Rectangle Style="{StaticResource MyAppDataFieldSeparatorStyle}"/> <!-- Separator line-->
             <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelUserInfo}" FieldValue="{x:Bind MyMainPageViewModel.UserInfo, Mode=OneWay}" />
             <Controls:MyAppDataField FieldLabel="{x:Bind MyMainPageViewModel.LabelCurrentTimeZone}" FieldValue="{x:Bind MyMainPageViewModel.TZDisplayName}" />
