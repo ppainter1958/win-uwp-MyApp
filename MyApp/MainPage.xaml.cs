@@ -44,5 +44,10 @@ namespace MyApp
         {
             this.Frame.Navigate(typeof(HPInfoPage));
         }
+
+        private void HPIDAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HPIDPage));
+        }
     }
 }

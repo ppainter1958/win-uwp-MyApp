@@ -1,0 +1,32 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp.Views"
+    xmlns:Controls="using:MyApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    x:Class="MyApp.Views.HPIDPage"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="640.0"  d:DesignHeight="570" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ButtonBackgroundThemeBrush}">
+        <!-- Two column grid for MyApp.MainPage layout-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <!-- MyAppVerticalCommandToolbar LeftButtonStackPanel-->
+            <ColumnDefinition Width="4*"/>
+            <!-- MyAppPropertyColumn -->
+        </Grid.ColumnDefinitions>
+        <!-- LeftButtonStackPanel in left Grid.Column="0" is for nav and command buttons-->
+        <StackPanel x:Name="LeftButtonStackPanel" Style="{StaticResource MyAppVerticalCommandBarStyle}" >
+            <AppBarButton x:Name="HomeAppBarButton" Icon="Home" Label="" Style="{StaticResource MyAppBarButtonStyle}" Click="HomeAppBarButton_Click"/>
+        </StackPanel>
+        <!-- AppMainPage in right GridColumn="1" is for MainPage controls-->
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="HP ID" Style="{StaticResource MyAppTitleTextBlockStyle}" />
+            <Rectangle Style="{StaticResource MyAppDataFieldSeparatorStyle}"/>
+            <!-- Separator line-->
+            <Controls:MyAppDataField FieldLabel="{x:Bind MyHPIDViewModel.HPIDUserInfoID}" FieldValue="{x:Bind MyHPIDViewModel.HPIDUserInfoID, Mode=OneWay}" />
+        </StackPanel>
+    </Grid>
+</Page>
